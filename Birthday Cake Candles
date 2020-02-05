@@ -1,0 +1,3 @@
+def birthdayCakeCandles(ar):
+    
+    return ar.count(max(ar)) # For loop or list comprehension solution gives time out error.
