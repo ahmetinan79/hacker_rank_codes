@@ -1,0 +1,52 @@
+import datetime
+
+while True:
+    d1, m1, y1 = input("Please enter the return date in dd/mm/yyyy format: ").split("/")
+    d2, m2, y2 = input("Please enter the due date in dd/mm/yyyy format: ").split("/")
+    # We take the input for return date and due date.
+    d1 = int(d1)  # We convert string inputs to integers.
+    m1 = int(m1)
+    y1 = int(y1)
+    d2 = int(d2)
+    m2 = int(m2)
+    y2 = int(y2)
+
+    isValidDate = True  # I have found this part from internet to validate whether the entered dates are valid and
+    try:                # comply with the Gregorian calender.
+        datetime.datetime(y1, m1, d1)
+        datetime.datetime(y2, m2, d2)
+    except ValueError:
+        isValidDate = False
+
+    if isValidDate:  # We use a boolean to check whether the input dates are valid.
+        if 1 <= y1 <= 3000 and 1 <= y2 <= 3000:  # We check whether the years are within the given range.
+            if y1 > y2:  # If the return year is different than the due year, we charge fine accordingly.
+                fine = 10000
+                print(fine)
+                break
+            elif y1 == y2:  # If the years are same, then we check whether the book is delivered within the same month.
+                if m1 > m2:  # If the return month is different than the due month, we charge fine accordingly.
+                    fine = (m1 - m2) * 500
+                    print(fine)
+                    break
+                elif m1 == m2:  # If the months are same, then we check the days.
+                    if d1 >= d2:  # If the return day is different than the due day, we charge fine accordingly.
+                        fine = (d1 - d2) * 15
+                        print(fine)
+                        break
+                    else:  # If the book is delivered before the due date, no fine is charged.
+                        fine = 0
+                        print(fine)
+                        break
+                else:  # If the book is delivered before the due date, no fine is charged.
+                    fine = 0
+                    print(fine)
+                    break
+            else:  # If the book is delivered before the due date, no fine is charged.
+                fine = 0
+                print(fine)
+                break
+        else:  # We give a warning, if the years are not in the given range. We ask again for proper input.
+            print("Please enter year in the range of 1-3000.")
+    else:  # We give a warning, if the dates are not compliant with Gregorian calender, we ask again for proper input.
+        print("The date(s) that you have entered may not be valid.")
