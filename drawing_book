@@ -1,0 +1,32 @@
+turned_pages = []  # We define variable for a list to record turned pages.
+while True:  # We use a while loop to ask again if the constraints are not met.
+
+    n = int(input("Please enter the number of pages in the book: "))
+    p = int(input("Please enter the page number to turn to: "))
+    # We ask for inputs as integers above.
+
+    if 1 <= n <= 10 ** 5 and 1 <= p <= n:  # We start with the constraints as conditions.
+        if n / 2 > p:  # If the page number that we should go is less than the half of total pages,
+            # we start from the beginning.
+            for i in range(0, p + 1, 2):  # We use a for loop record the pages that we turn.
+                # We use a range function with 2 steps, because we move forward two page numbers as we turn a page.
+                turned_pages.append([i, i + 1])  # We record pages as nested list of pairs to our list.
+            print(len(turned_pages) - 1)  # We calculate the length of our list as the number of turned pages but
+            # we deduct 1, since we start from page #1.
+            break
+        else:  # If the page number that we should go is larger than the half of total pages, we start from the end.
+            if n % 2 == 0:  # If the total number of pages is even, the last page will be on the left and
+                # the blank page will be on the right.
+                for i in range(n + 1, p - 1, -2):  # We use a range function that goes backwards with two steps.
+                    # We use n+1 to make sure that last page with even number on the left.
+                    # We use p-1 to make sure that we go to the page that we we want to.
+                    turned_pages.append([i - 1, i]) # We use [i-1,i] as we go backwards.
+                print(len(turned_pages) - 1)
+                break
+            else:  # If the total number of pages is odd, the last page will be on the right.
+                for i in range(n, p - 1, -2):  # Since the total page number is odd, we use n instead.
+                    turned_pages.append([i - 1, i])
+                print(len(turned_pages) - 1)
+                break
+    else:
+        print("Please check the values for the total number of pages and the page number.")
