@@ -1,0 +1,10 @@
+def compareTriplets(a, b):
+  
+    point_a = 0
+    point_b = 0
+    for i in range(0,3):
+        if a[i]>b[i]:
+            point_a+=1
+        elif a[i]<b[i]:
+            point_b+=1
+    return [point_a, point_b]
