@@ -1,0 +1,11 @@
+def plusMinus(arr):
+
+    positive = [i for i in arr if i>0]
+    negative = [j for j in arr if j<0]
+    zero = [k for k in arr if k==0]
+    total = len(positive)+len(negative)+len(zero)
+    positive_ratio = len(positive)/total
+    negative_ratio = len(negative)/total
+    zero_ratio = len(zero)/total
+
+    print(f"{positive_ratio:5.5f}\n{negative_ratio:5.5f}\n{zero_ratio:5.5f}")
