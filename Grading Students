@@ -1,0 +1,7 @@
+    converted = []
+    for x in grades:
+        if 100 >= x >= 38 and x % 5 >= 3:
+            converted.append(x + (5-x%5))
+        else:
+            converted.append(x)
+    return converted
