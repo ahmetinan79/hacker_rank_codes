@@ -1,0 +1,5 @@
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+
+    apple_in = [a+i for i in apples if s <= a+i <= t]
+    orange_in = [b+j for j in oranges if s<= b+j <= t]
+    print(f"{len(apple_in)}\n{len(orange_in)}")
