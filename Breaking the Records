@@ -1,0 +1,13 @@
+def breakingRecords(scores):
+
+    score_list = [scores[0]]
+    max_scores = []
+    min_scores = []
+    for i in range(1, len(scores)):
+        if scores[i] > max(score_list):
+            score_list.append(scores[i])
+            max_scores.append(scores[i])
+        elif scores[i] < min(score_list):
+            score_list.append(scores[i])
+            min_scores.append(scores[i])
+    return len(max_scores), len(min_scores)
