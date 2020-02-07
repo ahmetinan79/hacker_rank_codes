@@ -1,0 +1,7 @@
+def birthday(s, d, m):
+
+    arr = []
+    for i in range(0,len(s)):
+        if sum(s[i:m+i]) == d and len(s[i:m+i]) == m:
+            arr.append(s[i:m+i])
+    return len(arr)
