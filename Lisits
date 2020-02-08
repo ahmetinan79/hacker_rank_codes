@@ -1,0 +1,20 @@
+N = int(input())
+my_list = [6, 5, 10]
+for i in range(N):
+    entry = input().split()
+    if entry[0] == "insert":
+        my_list.insert(int(entry[1]), int(entry[2]))
+    elif entry[0] == "remove":
+        my_list.remove(int(entry[1]))
+    elif entry[0] == "append":
+        my_list.append(int(entry[1]))
+    else:
+        if entry == "print":
+            print(my_list)
+        elif entry == "pop" and len(my_list) != 0:
+            my_list.pop()
+        elif entry == "reverse":
+            my_list.reverse()
+        elif entry == "sort":
+            my_list.sort()
+print(my_list)
