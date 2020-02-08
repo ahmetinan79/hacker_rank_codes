@@ -1,0 +1,20 @@
+if __name__ == '__main__':
+    names=[]
+    scores=[]
+    low_graders = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        names.append(name)
+        scores.append(score)
+
+    second_highest = sorted(list(set(scores)))
+    dict_pairs = dict(zip(names,scores))
+
+    for m,n in dict_pairs.items():
+        if n == second_highest[1]:
+            low_graders.append(m)
+    low_graders.sort()
+    
+    for k in low_graders:
+        print(k)
