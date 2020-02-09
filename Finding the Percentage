@@ -1,0 +1,4 @@
+def percentage(*args, **kwargs):
+
+    grades = {kwargs: [args]}
+    print(float(sum(grades[kwargs])/len(grades[kwargs]))
