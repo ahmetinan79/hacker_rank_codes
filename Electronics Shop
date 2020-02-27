@@ -1,0 +1,7 @@
+def getMoneySpent(keyboards, drives, b):
+    #
+    # Write your code here.
+    #
+    if len([i+j for i in keyboards for j in drives if i+j<=b])>0:
+           return max([i+j for i in keyboards for j in drives if i+j<=b])
+    return -1
