@@ -1,0 +1,9 @@
+grades = []
+
+N, S = map(int, input().split())
+for _ in range(S):
+    subject = list(map(float, input().split()))
+    grades+=[subject]
+sum_list = [sum(j)/S for j in zip(*grades)]
+for k in sum_list:
+    print(k)
