@@ -1,0 +1,28 @@
+n = int(input())
+for _ in range(n):
+    s = input().strip()
+    if s.isdigit() and len(s) == 10:
+        if s[0] in ['7', '8', '9']:
+            print("YES")
+        else:
+            print("NO")
+    else:
+        print("NO")
+        
+#Alternative solutions
+import re
+n = int(raw_input())
+for x in range(0, n):
+    if(re.match(r'^[7-9]{1}[0-9]{9}\n?\r?$', raw_input())):
+        print "YES"
+    else:
+        print "NO"
+###
+import re
+N = int(raw_input())
+for _ in range(N):
+    s = raw_input()
+    if re.search("^[789][0-9]{9}$", s) == None:
+        print "NO"
+    else:
+        print "YES"
