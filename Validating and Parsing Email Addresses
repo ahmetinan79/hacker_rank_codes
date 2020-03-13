@@ -1,0 +1,7 @@
+import re
+
+N = int(input())
+for _ in range(N):
+    x, y = input().split(' ')
+    if re.match(r"<[a-zA-Z](\w|-|\.|_)+@[a-zA-Z]+\.[a-zA-Z]{1,3}>", y):
+        print(x,y)
