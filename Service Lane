@@ -1,0 +1,6 @@
+def serviceLane(n, cases):
+    
+    min_vech = []
+    for i in cases:
+        min_vech.append(min(width[i[0]:i[1]+1]))
+    return min_vech
