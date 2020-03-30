@@ -1,0 +1,8 @@
+def designerPdfViewer(h, word):
+    
+    alpha = 'abcdefghijklmnopqrstuxvwyz'
+    height_list = []
+    for i in word:
+        if i in alpha:
+            height_list.append(h[alpha.find(i)])
+    return max(height_list)*len(word)
