@@ -1,0 +1,6 @@
+def bonAppetit(bill, k, b):
+    a = int((sum(bill)-bill[k])/2)
+    if a == b:
+        print('Bon Appetit')
+    else:
+        print(b-a)
